@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href ="style.css">
+</head>
+<body>
+<div class = "clock-container">
+    <!-- Analog Clock -->
+    <div class="clock">
+        <div class="hour">
+             <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+       </div>
+       <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+
+
+    <!-- Digital Clock -->
+    <div id="digitalClock">
+        <div id="hour"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+        <div id="ampm"></div>
+    </div>
+
+
+
+<!-- Alarm Clock -->
+<section class="container">
+    <form class="setAlarm">
+    <label class="alarm-heading"><h3 class="h3">Set Alarm</h3><label><br>
+    <div class="set-alarm-field">
+        <input type="number" name="a_hour" id="a_hour" placeholder="HH" max="23" min="00">
+        <input type="number" name="a_min" id="a_min" placeholder="MM" max="59" min="00">
+        <input type="number" name="a_sec" id="a_sec" placeholder="SS" max="59" min="00">
+        <select name="a_ampm" id="a_ampm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div>
+        <div class="controls">
+            <button type="submit" class="set-alarm">Set Alarm</button>
+            <button type="reset" onclick="clearAlarm()" class="clear-alarm">Stop Alarm</button>
+        </div>
+    </form> 
+    <div>
+        <h3 class="alarm-heading">Upcoming Alarms</h3>
+    </div>
+    <div>
+        <ul id = "myList">
+            
+        </ul>
+    </div>
+
+</section>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

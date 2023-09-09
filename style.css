@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    min-height: 100vh;
+    background-color: #e0e2e4;
+}
+
+.clock-container
+{
+    display: flex;
+}
+
+.clock{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: url(assets/bg-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 30px;
+}
+
+.clock::before
+{
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: darkblue;
+    z-index: 10000;
+    border-radius: 50%;
+}
+
+.hour,
+.min,
+.sec
+{
+    position: absolute;
+}
+
+.hour,.hr{
+    width: 200px;
+    height: 200px;
+}
+
+.min,.mn{
+    width: 230px;
+    height: 230px;
+}
+
+.sec,.sc{
+    width: 250px;
+    height: 250px;
+}
+
+.hr, .mn,.sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.hr::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 100px;
+    background:  #fff;
+}
+
+.mn::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 110px;
+    background: #fff;
+}
+
+.sc::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: darkkhaki;
+}
+
+
+/* Digital Clock */
+#digitalClock{
+    display: flex;
+    color: rgb(58, 58, 109);
+    font-size: 3em;
+    margin-left: 90px;
+    margin-top: 100px;
+}
+
+
+/* Alarm Clock */
+.container{
+    align-content: center;
+    text-align: center;
+    margin-top: 190px;
+    margin-left: -250px;
+}
+
+.alarm-heading{
+    color: rgb(58, 58, 109);
+    margin-bottom: 10px;
+    padding-top: 50px;
+    font-family: 'Times New Roman';
+}
+
+.h3{
+    font-family: 'Times New Roman';
+}
+
+
+.set-alarm-field{
+    margin-top: 3px;
+    height: 40px;
+    padding-top: 0px;
+}
+
+.set-alarm-field input{
+    height: 25px;
+    width: 35px;
+    border: 2px solid #4a6087;
+}
+
+.set-alarm-field select{
+    height: 25px;
+    width: 40px;
+    border: 2px solid #4a6087;
+}
+
+
+.controls button{
+    background-color: #466a99;
+    border-color: #466a99;
+    color: whitesmoke;
+    width: 105px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight:500;
+}
+
+.controls button:hover{
+    background-color: #204b74;
+}
+
+#myList{
+    list-style-type: none;
+    
+}
+
+#myList li{
+    font-size: 1.2rem;
+    color: whitesmoke;
+    background-color: #204b74;
+    height: 2.5rem;
+    margin-left: -30px;
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-top: 10px;
+    width: 280px;
+    margin-bottom: 10px;
+
+}
+
+.time-list{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.time-list span{
+    /* background-color: violet; */
+    width: 160px;
+    margin-right: 18px;
+    
+}
+
+.time-list button{
+    background-color: #4a6087;
+    border-radius: 3px;
+    border-width: 0px;
+    height: 22px;
+    width: 50px;
+    color: whitesmoke;
+}
+
