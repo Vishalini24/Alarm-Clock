@@ -17,6 +17,52 @@ const addAlarm = document.querySelector('.setAlarm')
 
 const alarmList = [];  // Stores all the alarms being set 
 
+// event to set a new alarm whenever the form is submitted 
+addAlarm.addEventListener('submit', e=> {
+    
+    e.preventDefault();
+    let new_h=formatTime(addAlarm.a_hour.value);
+    if(new_h === '0'){
+        new_h = '00'
+    }
+    let new_m=formatTime(addAlarm.a_min.value);
+    if(new_m === '0'){
+        new_m = '00'
+    }
+    let new_s=formatTime(addAlarm.a_sec.value);
+    if(new_s === '0'){
+        new_s = '00'
+    }
+
+    const ampm = addAlarm.a_ampm.value; // Get the selected AM/PM value
+    
+    const newAlarm = `${new_h}:${new_m}:${new_s}${ampm}`
+
+//     add newAlarm to alarmList
+    if(isNaN(newAlarm)){
+        if(!alarmList.includes(newAlarm)){
+            alarmList.push(newAlarm);
+            console.log(alarmList);
+            console.log(alarmList.length);
+            showNewAlarm(newAlarm);
+            addAlarm.reset();
+        } else{
+            alert(`Alarm for ${newAlarm} already set.`);
+        }
+    } else{
+        alert("Invalid Time Entered")
+    }        
+})
+
+// Adds newAlarm to the unordered list as a new list item on webpage
+function showNewAlarm(newAlarm){
+    const html =`<li class = "time-list">        
+        <span class="time">${newAlarm.slice(0, -2)} ${newAlarm.slice(-2)}</span>
+        <button class="deleteAlarm time-control" id="delete-button" onclick = "remove(this.value)" value=${newAlarm}>Delete</button>       
+    </li>`
+    myList.innerHTML += html
+};
+
 
 // Plays the alarm audio at correct time
 function ringing(now){
@@ -106,15 +152,6 @@ remove = (value) => {
 }
 
 
-// Adds newAlarm to the unordered list as a new list item on webpage
-function showNewAlarm(newAlarm){
-    const html =`<li class = "time-list">        
-        <span class="time">${newAlarm.slice(0, -2)} ${newAlarm.slice(-2)}</span>
-        <button class="deleteAlarm time-control" id="delete-button" onclick = "remove(this.value)" value=${newAlarm}>Delete</button>       
-    </li>`
-    myList.innerHTML += html
-};
-
 // set the correct format of time
 // converts "1:2:3" to "01:02:03"
 function formatTime(time) {
@@ -124,39 +161,4 @@ function formatTime(time) {
     return time;
 }
 
-// event to set a new alarm whenever the form is submitted 
-addAlarm.addEventListener('submit', e=> {
-    
-    e.preventDefault();
-    let new_h=formatTime(addAlarm.a_hour.value);
-    if(new_h === '0'){
-        new_h = '00'
-    }
-    let new_m=formatTime(addAlarm.a_min.value);
-    if(new_m === '0'){
-        new_m = '00'
-    }
-    let new_s=formatTime(addAlarm.a_sec.value);
-    if(new_s === '0'){
-        new_s = '00'
-    }
 
-    const ampm = addAlarm.a_ampm.value; // Get the selected AM/PM value
-    
-    const newAlarm = `${new_h}:${new_m}:${new_s}${ampm}`
-
-//     add newAlarm to alarmList
-    if(isNaN(newAlarm)){
-        if(!alarmList.includes(newAlarm)){
-            alarmList.push(newAlarm);
-            console.log(alarmList);
-            console.log(alarmList.length);
-            showNewAlarm(newAlarm);
-            addAlarm.reset();
-        } else{
-            alert(`Alarm for ${newAlarm} already set.`);
-        }
-    } else{
-        alert("Invalid Time Entered")
-    }        
-})
