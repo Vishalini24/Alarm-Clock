@@ -10,7 +10,7 @@ audio.loop = true;
 let alarmTime = null;
 let alarmTimeout = null;
 
-//myList contains the alarms added by the user
+//myList displays the alarms added by the user
 const myList = document.querySelector('#myList');
 const addAlarm = document.querySelector('.setAlarm')
 
