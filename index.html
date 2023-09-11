@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alarm Clock</title>
+    <!--Link to css file-->
     <link rel="stylesheet" href ="style.css">
 </head>
 <body>
@@ -33,6 +34,7 @@
 
 
 <!-- Alarm Clock -->
+<!-- Set alarm using form inputs -->
 <section class="container">
     <form class="setAlarm">
     <label class="alarm-heading"><h3 class="h3">Set Alarm</h3><label><br>
@@ -45,14 +47,19 @@
             <option value="PM">PM</option>
         </select>
     </div>
+
+        <!-- Set alarm and Stop Alarm Buttons-->
         <div class="controls">
             <button type="submit" class="set-alarm">Set Alarm</button>
             <button type="reset" onclick="clearAlarm()" class="clear-alarm">Stop Alarm</button>
         </div>
     </form> 
+
+    <!--Upcoming Alarms-->
     <div>
         <h3 class="alarm-heading">Upcoming Alarms</h3>
     </div>
+    <!-- Alarms show up in this list-->
     <div>
         <ul id = "myList">
             
@@ -62,6 +69,7 @@
 </section>
 </div>
 
+<!--Link to js file-->
 <script src="index.js"></script>
 </body>
 </html>
