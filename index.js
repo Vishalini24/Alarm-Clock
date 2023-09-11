@@ -2,7 +2,7 @@ const hr = document.querySelector("#hr");
 const mn = document.querySelector("#mn");
 const sc = document.querySelector("#sc");
 
-// set audio for alarm
+// set audio for alarm and audio will play in loop
 const audio = new Audio('assets/Alarm-audio.mp3');
 audio.loop = true;
 
@@ -10,13 +10,12 @@ audio.loop = true;
 let alarmTime = null;
 let alarmTimeout = null;
 
-
+//myList contains the alarms added by the user
 const myList = document.querySelector('#myList');
 const addAlarm = document.querySelector('.setAlarm')
 
 
 const alarmList = [];  // Stores all the alarms being set 
-// let count =1;
 
 
 // Plays the alarm audio at correct time
@@ -27,7 +26,7 @@ function ringing(now){
 }
 
 
-
+//function to check if it is the right time to ring the alarm
 setInterval(()=>{
     let day = new Date();
     let hh = day.getHours() * 30;
@@ -48,7 +47,7 @@ setInterval(()=>{
     let s  = new Date().getSeconds();
     let am = "AM";
 
-
+    // After 12 it changes to PM
     if(h > 12){
         h = h - 12;
         am = "PM";
@@ -64,6 +63,7 @@ setInterval(()=>{
     minutes.innerHTML = m+":";
     seconds.innerHTML = s+":";
     ampm.innerHTML = am;
+
 
     let now = `${h}:${m}:${s}${am}`;
 
