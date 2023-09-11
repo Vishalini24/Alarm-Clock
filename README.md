@@ -5,10 +5,11 @@ This project is an Alarm Clock structured using HTML, styled using CSS and enhan
 * Setting multiple alarms using the 'Set Alarm' button
 * Deleting alarms using the 'Delete' button
 * Viewing upcoming alarms in the 'Upcoming Alarms' section
-* Stopping the alarm using the 'Stop Alarm' button."
+* Stopping the alarm  using the 'Stop Alarm' button."
+* 'Alarm already set' alert for repeating alarms.
 
 ## Function
-You can set an alarm using the input boxes for hours, minutes, seconds, and AM/PM respectively. It's important to enter a valid time (hour <= 12, minute <= 59, second <= 59), or you'll receive a warning. Once you set the alarm, it will be added to the 'Upcoming Alarms' section. When it's time for the alarm to ring, an alert box will appear, followed by the ringing alarm sound. You can stop the alarm by clicking the 'Stop Alarm' button, and you can also delete it from the 'Upcoming Alarms' section. If you attempt to set an alarm that is already in the 'Upcoming Alarms' section, you will receive an alert stating 'Alarm already set.' Below, I've included a screenshot of the alarm clock for reference.
+You can set an alarm using the input boxes for hours, minutes, seconds, and AM/PM respectively. It's important to enter a valid time (hour <= 12, minute <= 59, second <= 59), or you'll receive a warning. Once you set the alarm, it will be added to the 'Upcoming Alarms' section. When it's time for the alarm to ring, an alert box will appear, followed by the ringing alarm sound. You can stop the alarm by clicking the 'Stop Alarm' button, and you can also delete it from the 'Upcoming Alarms' section. If you attempt to set an alarm that is already in the 'Upcoming Alarms' section, you will receive an alert stating 'Alarm already set.'I've included a screenshot of the alarm clock for reference below.
 
 ## Screenshot
 <img width="800" alt="Alarm_Clock-Demo" src="https://github.com/Vishalini24/Alarm-Clock/assets/63181262/ae7b939d-ed22-435d-bd37-75b9370a933b">
