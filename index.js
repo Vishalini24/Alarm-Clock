@@ -48,9 +48,11 @@ setInterval(()=>{
     let am = "AM";
 
     // After 12 it changes to PM
-    if(h > 12){
-        h = h - 12;
+   if (h >= 12) {
         am = "PM";
+        if (h > 12) {
+            h = h - 12;
+        }
     }
 
 
