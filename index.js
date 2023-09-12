@@ -64,7 +64,6 @@ function showNewAlarm(newAlarm){
 function ringing(now){
     audio.play();
     alert(`Hey! it is ${now}`);
-    document.querySelector("#ampm").innerHTML = ampm;
 }
 
 
