@@ -6,10 +6,6 @@ const sc = document.querySelector("#sc");
 const audio = new Audio('assets/Alarm-audio.mp3');
 audio.loop = true;
 
-
-let alarmTime = null;
-let alarmTimeout = null;
-
 //myList displays the alarms added by the user
 const myList = document.querySelector('#myList');
 const addAlarm = document.querySelector('.setAlarm')
@@ -125,10 +121,6 @@ setInterval(()=>{
 // function to clear/stop the currently playing alarm
 function clearAlarm() {
     audio.pause();
-    if (alarmTimeout) {
-        clearTimeout(alarmTimeout);
-        alert('Alarm cleared');
-    }
 }      
 
 
