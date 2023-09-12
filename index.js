@@ -67,8 +67,9 @@ function ringing(now){
 }
 
 
-//function to check if it is the right time to ring the alarm
+//Clock face - Analog and digital clock
 setInterval(()=>{
+    //Analog clock
     let day = new Date();
     let hh = day.getHours() * 30;
     let mm = day.getMinutes() * 6;
@@ -78,6 +79,7 @@ setInterval(()=>{
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
 
+    //Digital clock 
     let hour = document.querySelector("#hour");
     let minutes = document.querySelector("#minutes");
     let seconds = document.querySelector("#seconds");
